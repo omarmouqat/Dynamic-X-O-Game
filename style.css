@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+img{
+    width: 98%;
+}
+td,tr{
+    width: 33.3%;
+    height: 33.3%;
+}
+h1{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    background-color: #96CEB4;
+    color: #A66E38;
+    padding: 20px;
+}
+
+table{
+    background-color: #FFEEAD;
+    margin: auto;
+    width: 50%;
+    height: auto;
+
+}
+td,table,tr{
+    border: 9px solid #131313;
+    border-collapse: collapse;
+    border-color: #A66E38;
+}
+body{
+    background-color: #FFAD60;
+    overflow-x: hidden;
+}
+@media (max-width: 819px) { /* For phone screens */
+    table {
+        width: 100dvw;
+        height: 100dvw;
+        margin: auto;
+        /* Full width on mobile */
+    }
+}
