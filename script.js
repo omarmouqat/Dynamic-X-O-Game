@@ -15,7 +15,7 @@ function Box(box) {
         if (the_player === -1) {
             //console.log("-1");
             xo[Number(box[0])][Number(box[1])] = 1;
-            document.getElementById(box).src = 'X.png';
+            document.getElementById("c"+box).src = 'X.png';
             the_player *= -1;
             //console.log(xo);
             if (
@@ -33,17 +33,11 @@ function Box(box) {
                 return;
             }
             document.getElementById("p1").textContent = 'Player Two Role!';
-            console.log(positions.length);
-            if (positions.length>5){
-                console.log(positions[0][0].toString()+positions[0][1].toString());
-                xo[positions[0][0]][positions[0][1]] = 0;
-                document.getElementById(positions[0][0].toString()+positions[0][1].toString()).src = 'N.png';
-                positions.shift();
-            }
+
         }else if (the_player === 1) {
             //console.log("1");
             xo[Number(box[0])][Number(box[1])] = 2;
-            document.getElementById(box).src = 'O.png';
+            document.getElementById("c"+box).src = 'O.png';
             the_player *= -1;
             //console.log("hell");
             //console.log(xo);
@@ -63,13 +57,20 @@ function Box(box) {
                 return;
             }
             document.getElementById("p1").textContent = 'Player One Role!';
-            console.log(positions.length);
-            if (positions.length>5){
-                console.log(positions[0][0].toString()+positions[0][1].toString());
-                xo[positions[0][0]][positions[0][1]] = 0;
-                document.getElementById(positions[0][0].toString()+positions[0][1].toString()).src = 'N.png';
-                positions.shift();
-            }
+        }
+        console.log(positions.length);
+
+        if (positions.length>5){
+            console.log("c"+positions[0][0].toString()+positions[0][1].toString()+"delete and get back to normale");
+            xo[positions[0][0]][positions[0][1]] = 0;
+            document.getElementById("c"+positions[0][0].toString()+positions[0][1].toString()).src = 'N.png';
+
+            document.getElementById("c"+positions[0][0].toString()+positions[0][1].toString()).style.backgroundColor = "#FFEEAD";
+            positions.shift();
+        }
+        if (positions.length > 4){
+            console.log("c"+positions[0][0].toString()+positions[0][1].toString()+"change color");
+            document.getElementById("c"+positions[0][0].toString()+positions[0][1].toString()).style.backgroundColor = "#e33636";
         }
 
 
